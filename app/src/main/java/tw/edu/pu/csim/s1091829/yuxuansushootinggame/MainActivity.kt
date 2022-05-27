@@ -10,8 +10,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         //設定螢幕水平顯示
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
+
 
     }
 }

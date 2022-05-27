@@ -13,7 +13,6 @@
 
     <tw.edu.pu.csim.s1091829.yuxuansushootinggame.MySurfaceView
         android:id="@+id/game"
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

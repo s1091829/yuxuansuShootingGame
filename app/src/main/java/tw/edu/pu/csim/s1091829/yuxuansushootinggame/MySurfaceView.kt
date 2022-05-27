@@ -18,12 +18,14 @@ class MySurfaceView(context: Context?, attrs: AttributeSet?) : SurfaceView(conte
         surfaceHolder.addCallback(this)
     }
 
+
     override fun surfaceCreated(p0: SurfaceHolder) {
         var canvas: Canvas = surfaceHolder.lockCanvas()
             drawSomething(canvas)
         surfaceHolder.unlockCanvasAndPost(canvas)
 
     }
+
 
     fun drawSomething(canvas:Canvas) {
         var SrcRect: Rect = Rect(0, 0, BG.width, BG.height) //裁切
@@ -39,11 +41,14 @@ class MySurfaceView(context: Context?, attrs: AttributeSet?) : SurfaceView(conte
 
     }
 
+
     override fun surfaceChanged(p0: SurfaceHolder, p1: Int, p2: Int, p3: Int) {
 
     }
 
+
     override fun surfaceDestroyed(p0: SurfaceHolder) {
 
     }
+
 }
