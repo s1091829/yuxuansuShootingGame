@@ -1,11 +1,17 @@
 package tw.edu.pu.csim.s1091829.yuxuansushootinggame
 
+
 import android.content.pm.ActivityInfo
 import android.graphics.Canvas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import com.bumptech.glide.annotation.GlideModule
+import com.bumptech.glide.module.AppGlideModule
 import kotlinx.coroutines.*
+@GlideModule
+public final class MyAppGlideModule : AppGlideModule()
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var game : MySurfaceView
     var flag:Boolean = false
     lateinit var job : Job
+    lateinit var imgAuthor : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +30,14 @@ class MainActivity : AppCompatActivity() {
 
         img = findViewById(R.id.img)
         game = findViewById(R.id.game)
+
+        imgAuthor = findViewById(R.id.imgAuthor)
+        GlideApp.with(this)
+            //.load(R.drawable.earth)
+            .load(R.drawable.yxsu)
+            .circleCrop()
+            .override(800, 600)
+            .into(imgAuthor)
 
         img.setOnClickListener({
             if (flag){
