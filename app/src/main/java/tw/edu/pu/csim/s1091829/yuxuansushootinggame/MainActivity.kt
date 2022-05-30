@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                 job = GlobalScope.launch(Dispatchers.Main) {
                     while(flag) {
                         delay(10)
+                        game.fly.update()
                         var canvas: Canvas = game.surfaceHolder.lockCanvas()
                         game.drawSomething(canvas)
                         game.surfaceHolder.unlockCanvasAndPost(canvas)
